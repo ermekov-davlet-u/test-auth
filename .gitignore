@@ -1,0 +1,19 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/server/node_modules
+/frontend/node_modules
+frontend/.pnp
+/frontend/pnp.js
+
+# testing
+/coverage
+
+# production
+/frontend/build
+/node_modules
+
+/server/.gitignore
+/frontend/.gitignore
+
+

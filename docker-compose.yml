@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: "./auth-test"
+    volumes:
+      - /auth-test/node_modules
+      - ./auth-test:/app
+    ports:
+      - 8080:8080
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  sample:
+    build:
+      dockerfile: Dockerfile
+      context: "./test-auth"
+    volumes:
+      - '.:/test-auth'
+      - '/test-auth/node_modules'
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
